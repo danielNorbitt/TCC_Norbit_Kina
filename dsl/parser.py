@@ -14,7 +14,7 @@ class ListDSL:
     def compile(self):
        with open('list_template.dn', 'r') as file:
             src = Template(file.read())
-            result = src.substitute(teste="Teste")
+            result = src.safe_substitute(teste="Teste")
             self.write_file("List.dn", result)
             
     def write_file(self, file_name, content):
